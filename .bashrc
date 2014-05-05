@@ -1,6 +1,4 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
 
 # If not running interactively, don't do anything
 case $- in
@@ -84,6 +82,12 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# emacs.
+alias emacs='emacsclient -a "" -t'
+alias em="emacs -nw"
+export EDITOR='emacsclient -a "" -t -nw'
+stty -ixon
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -113,16 +117,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Get the intel compilers into the path.
-source /opt/intel/bin/compilervars.sh intel64
+# Get 256 colors.
+[ -z "$TMUX" ] && export TERM=xterm-256color
 
-# Add Light Table.
-export PATH=$PATH:/home/youngpm/apps/LightTable
-
-# Change PATH to find my Python.
-#export PATH=~/apps/Python-2.7.6/bin:$PATH
-#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/youngpm/apps/geos-3.4.2/lib
-#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/youngpm/apps/proj-4.8.0/lib
-#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/youngpm/apps/gdal-1.10.1/lib
-#export PATH=$PATH:/home/youngpm/apps/gdal-1.10.1/bin
 
