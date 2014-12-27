@@ -83,8 +83,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # emacs.
-alias emacs='emacsclient -a "" -t'
-alias em="emacs -nw"
+alias em="emacsclient -a "" -t -nw"
 export EDITOR='emacsclient -a "" -t -nw'
 stty -ixon
 
@@ -120,4 +119,17 @@ fi
 # Get 256 colors.
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
+# Eclipse.
+export PATH=$PATH:/home/pyoung/eclipse
 
+# Golang.
+export GOPATH=~/golang
+export PATH=$PATH:$GOPATH/bin
+
+# Scala.
+export SCALA_HOME=/usr/local/share/scala-2.11.2
+export PATH=$PATH:$SCALA_HOME/bin
+
+# My own builds.
+export LD_LIBRARY_PATH=/home/pyoung/apps/lib:$LD_LIBRARY_PATH
+export PATH=/home/pyoung/apps/bin:$PATH
