@@ -83,7 +83,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # emacs.
-alias em="emacsclient -a "" -t -nw"
+alias em='emacsclient -a "" -t -nw'
 export EDITOR='emacsclient -a "" -t -nw'
 stty -ixon
 
